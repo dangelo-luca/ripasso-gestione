@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect, session
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from models import db, User
 from flask_bcrypt import Bcrypt
+from utilis import Api
 import sqlite3
 
 app = Flask(__name__)
@@ -55,7 +56,8 @@ def login():
 @login_required #solo se user è autenticato
 def home():
     user_logged = current_user.username
-    return render_template('home.html', username=current_user.username, user_logged=user_logged)
+    people = Api()
+    return render_template('home.html', username=current_user.username, user_logged=user_logged, people=people)
 
 @app.route('/logout')
 @login_required

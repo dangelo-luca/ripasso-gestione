@@ -1,2 +1,15 @@
-<h1 align="center">Utente Connesso: {{user_logged}} </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Utente Connesso: {{user_logged}} </h1>
+    {%for i in people%}
+        <h2>{{i.name}} <br> {{i.craft}}</h2>
+    {%endfor%}
 
+</body>
+</html>
