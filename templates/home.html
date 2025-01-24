@@ -10,6 +10,6 @@
     {%for i in people%}
         <h2>{{i.name}} <br> {{i.craft}}</h2>
     {%endfor%}
-
+    <a href="{{url_for('logout')}}" style="font-size: 30px;">Logout</a>
 </body>
 </html>
